@@ -1,0 +1,161 @@
+DATA RETRIEVAL LANGUAGE/DATA QUERY LANGUAGE
+
+It is used to retrieve the data from a relational database and displays the output in the user specified format.
+It is read only statement.
+SQL> Select <* / ColumnName(s) / Mathematical Expression (s)/ Literal(s) / Psuedocolumn(s) / Function(s) / Column Alias name(s) >   
+from  <tablename>
+[Table Alias name] [Where clause] [Group by clause] [Having clause][order by clause]
+
+A select statement can take either a selection operator or a group of expression only.
+A select statement is exexcuted once for each record starting from top to bottom in a sequential order and in a forward direction.
+
+Select statement is executed from LHS to RHS.
+
+1.	*  [ALL]
+SQL>select * from emp;
+SQL>select * from dept;
+SQL>select * from salgrade;
+Note: To extract the data from the particular column or table use column name as the action statement seprated by “,” (comma).
+
+2.	ColumnName(s)
+SQL> select ename,sal  from emp;
+SQL> select ename,sal,deptno from emp;
+
+3.	Mathematical Expression:  An expression containing the mathematical operator & operand. Eg 10+20, a*b . If an mathematical expression is used in the select statement then the output contain the result of the math expression.  
+ SQL> select  10+20 from dual;
+SQL> select  20+20 from dummy;
+
+4.	Literals: Two types of literals as follows
+
+String Literals : Any string which is enclosed in single quotes . example ‘hello’
+Numeric literals : Any constant numeric value is called as a numeric constant. ex: 123
+
+SQL>select  ‘welcome to oracle’ from dual;
+SQL>select  ‘welcome to oracle’ from dummy;
+
+Concatenation Operator : Which is used for combining two strings.
+		   	    String1 || String2
+SQL>  select 'hello'||'world' from dual;
+SQL> select ename || 'is working in dept' || deptno from emp;
+
+5.	Column Alias Name
+
+An alternative name to a column to display as column header is called column alias name.
+
+SQL> Select <EXPRESSION> AS <ALIASNAME>/ “<ALIASNAME>”
+SQL> select empno as eno from emp; 
+SQL> select grade as remark from salgrade;
+
+6.	Psuedocolumn: these column doesn’t exist in any table but can be used in normal column. Oracle support following pseudo columns:
+
+SYSDATE / ROWID / ROWNUM / LEVEL / NEXTVAL  / CURRVAL
+
+SYSDATE: stands for the “system date” .It is a psuedocolumn which return the current date  & time of the server system (In the default format  of “DD-MM-YY” ).
+SQL> select sysdate from dual;
+SQL> select empno, ename, sysdate-hiredate as exp from emp;
+
+ROWID: Every record in the DB is uniquely identified by a system generated value called as ROWID. This ROWID is a 80 character alphanumeric.
+SQL>select rowid , empno, ename from emp;
+SQL>select * from emp where rowid ='AAASNWAAEAAAAIzAAA';  
+
+ROWNUM: It is a pseudo column which generates a sequence of numeric  values which represents the position of the record in the output .ROWNUM are generated after selecting the data. 
+SQL> select rownum ,empno,ename from emp; 
+SQL> select rownum,empno,ename from emp where deptno=10;
+SQL> select rownum,empno,ename,hiredate from emp where rownum=1;
+SQL> select rownum,empno,ename,hiredate from emp where rownum<10;
+SQL> select rownum,empno,ename,hiredate from emp where rownum=2; “will displays no row selected” reason  start for the first row where cond fails therefore stopping  there only.
+LEVEL:
+NEXTVAL:
+CURRVAL:
+
+7.	Functions
+It is a pre-compiled program which takes the input by using the formal parametres.
+These formal parameter will take the input from actual parameter & return a single value by using the function name.
+	  Single row function : These function are executed once for each record of the table. 
+                          For comparing the output of a single row function use ‘WHERE’ clause.
+	  Multi-row Function  : These function  are executed once for a group of record. 
+                          To compare the output of a multi-row function use “HAVING” clause. 	
+
+
+Operator of Oracle 
+Relational Operator:          = ,  <  ,  > ,  <= ,  >= , = ! , <>, !=
+Logical Operator: 	       NOT , AND , OR
+Special Operator:	       in , like, is, between , not between , any , all, exist
+
+WHERE clause
+It is use to filter the record based on the user specified condition or coditions.
+SQL>select * from  <table> 
+         where <cond1> [and /or]  <cond2> [and /or]  ……..<condn>;
+A select statement may contain only where clause with any number of condition.
+The execution of a select statement for a record depends on the overall condition but not the individual condition.
+
+SQL> select * from emp where ename ='SMITH';
+SQL> select * from emp where job ='SALESMAN';
+SQL> select * from emp where sal >2000;
+SQL> select * from emp where HIREDATE> '31-DEC-81';
+
+SPECAIL OPERATOR
+
+1.	IN
+It is a special operator which is used to check the existence of a value in a group of value.
+SQL> select * from emp <tablename> 
+          where
+         <columnname> in (val1, val2…….,valn);
+EXAMPLES:
+SQL> select * from emp where job in ('SALESMAN', 'CLERK');
+SQL> select * from emp where EMPNO in (7369,7499);
+SQL> select * from emp where SAL in (800, 1600,3000);
+
+2.	NOT IN
+SQL> select * from emp where job not in ('SALESMAN', 'CLERK');
+SQL> select * from emp where EMPNO not  in (7369,7499);
+SQL> select * from emp where SAL not in (800, 1600,3000);
+	
+3.	Like 
+It is a special operator used to check the pattern of a string.
+SQL> select  ……  from <tablename>
+         where
+         <columnname> like ‘<Pattern>’;
+
+
+
+Wildcard Charecters:
+%       ---->    ‘Percentile’ is used to check any number of characters including no charecters.
+_       ---->     ‘Underscore’ checks for only single charecters. 
+SQL> select * from emp where ename like 'A%' ;
+SQL> select * from emp where ENAME like 'S%';
+SQL> select * from emp where JOB like 'S%';
+SQL> select * from emp where ename like '%A%';
+SQL> select * from emp where deptno=20 and (job='CLERK' or job='MANAGER');
+
+Step1:	Identify the requirement individually
+		R1: Working in deptno 20
+		R2: Working as clerk or manager
+Step2:	For each requirement provide the condition
+		R1: Deptno=20
+		R2: job =’CLERK’ or job=’MANAGER’	
+Step3:	For any requirement if condition exist enclose it in ()
+		Deptno=20 and (job =’CLERK’ or job=’MANAGER’)
+			
+4.	NULL OPERATOR
+Any value which is missing in the table is represented by a keyword NULL.
+If null is used as a mathematical expression then result is always null.   
+If a null is used within a condition then the result is always false.
+
+5.	IS OPERATOR
+Special operator used to check for null.
+SQL> Select …… from emp  where  <columnname> is null;
+SQL> select * from emp where comm is null;
+SQL> select * from emp where mgr is null;
+
+6. BETWEEN  / NOT BETWEEN
+
+It is special operator  used to check for the existence of value between  the range of values including the limits. Works  effectively with numbers and date.
+SQL> select ………..from emp where <column name> between <lower value> and <higher value>;
+SQL> select * from emp where sal>1500 and sal<3000;
+SQL> select ename from emp where sal>1500 and sal<2000;
+SQL> select * from emp where sal not between 2000 and 3000;
+SQL> select * from emp where deptno not between 10 and 20;
+
+
+
