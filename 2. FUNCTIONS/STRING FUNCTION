@@ -1,0 +1,84 @@
+STRING FUNCTION
+1.	Length(str1)
+
+Returns the length of str1.
+SQL> select length('shabi') from dual;
+
+2.	Upper(str1)
+
+Returns the uppercase of str1.
+SQL> select length('shabi') from dual;
+
+3.	lower(str1)
+
+Returns the lowercase of str1.
+SQL> select lower('shabi') from dual;
+
+4.	Initcap(str1)
+
+Converts the initial charecters of a word to uppercase & remaining to lowercase.
+SQL> select Initcap('shabi') from dual;
+SQL> select Initcap('I am the best') from dual;
+
+5.	reverse(str1)
+
+return the reverse of str1.
+SQL> select reverse ('shabi') from dual;
+SQL> select reverse ('I am the best') from dual;
+
+6.	ascii(str1)
+
+return the ascii value for the str1.
+SQL> select ascii('s') from dual;
+SQL> select ascii('I am the best') from dual;
+
+7.	chr(n1)
+
+returns the charecter value for the n1.
+SQL> select chr(105) from dual;
+ 
+8.	lpad(str1,n1,[chr1])
+
+returns the left padded value for the n1.
+SQL> select lpad(‘oracle’, 10, ‘*’) from dual;
+SQL> select length (lpad(‘oracle’, 10, ‘*’)) from dual;
+
+9.	 rpad(str1,n1,[chr1])	
+
+returns the right  padded value for the n1.
+SQL> select rpad(‘oracle’, 10, ‘*’) from dual;
+SQL> select length (rpad(‘oracle’, 10, ‘*’)) from dual;
+
+10.	ltrim(str1, [chr1])	
+
+SQL> select ltrim('   oracle___') from dual;
+SQL> select ltrim ('*******shabi$$$$$', '*') from dual;
+
+11.	rtrim(str1, [chr1]) 
+
+    SQL> select rtrim ('shabi      ') from dual;
+    SQL> select rtrim ('shabi$$$$$$$$$$$', '$') from dual;
+	
+12.	trim([leading/trailing/both  chr1 from ]str1)
+                  SQL> select trim('       oracle      ') from dual;
+                  SQL> select trim ('        shabi ') from dual;
+
+13.	substr(str1, n1,[n2])
+
+SQL> select substr('oracle',2,3) from dual;
+       SQL> select substr('oracle',2) from dual;
+
+14.	instr(str1,str2,[n1],[n2])
+
+Returns the position of ‘n2th‘ occurrence of str2 in str1 starting from ‘n1th’
+Position(Default value of n1 is 1, n2 is 1)
+      
+       SQL> select instr('shabiisdatascientist' ,'h',2 ,1) from dual;
+
+15.	Soundex(str1)
+
+It is going to return the value which sounds like str1.
+	      SQL> select * from emp where SOUNDEX('ENAME') = SOUNDEX('SMYTHE');
+
+
+	
