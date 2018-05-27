@@ -75,7 +75,7 @@ These formal parameter will take the input from actual parameter & return a sing
                           For comparing the output of a single row function use ‘WHERE’ clause.
 	  Multi-row Function  : These function  are executed once for a group of record. 
                           To compare the output of a multi-row function use “HAVING” clause. 	
-
+MATHEMATICAL, DATE, STRING, MISCELLANEOUS, CONVERSION, 
 
 Operator of Oracle 
 Relational Operator:          = ,  <  ,  > ,  <= ,  >= , = ! , <>, !=
