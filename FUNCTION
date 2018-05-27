@@ -1,0 +1,302 @@
+MATHEMATICAL FUNCTION:
+1.	ABS(n1) 	
+
+Returns the magnitude of n1.
+SQL> select abs(40.264489) from dual; 	
+
+2.	SIGN(N1)
+
+Returns the sign of the value (1 for +ve , 0 for zero , -1 for -ve)
+SQL> select sign(40.264489) from dual;
+
+3.	SQRT(n1)
+
+Returns the square root of n1.
+SQL> select sqrt(16) from dual;
+
+4.	POWER(n1,N2)
+
+Returns  n1^N2.
+SQL> select power(2,5) from dual;
+
+5.	MOD(n1,n2)
+
+Returns  mod value.
+SQL> select mod(12,5) from dual;
+
+6.	LOG(n1,n2)
+
+Returns  log value.
+SQL> select log(2,2) from dual;
+
+7.	LN(n1)
+
+Returns  “log base e n1 “ value.
+SQL> select ln(n1) from dual;
+
+8.	EXP(n1)
+
+Returns  “ e ^n1 “ value.
+SQL> select exp(n1) from dual;
+
+9.	SIN(n1), COS(N1), TAN(N1)
+
+Returns  sin,cos,tan value of n1.
+SQL> select sin(n1) from dual;
+SQL> select cos(n1) from dual;
+SQL> select tan(n1) from dual;
+
+10.	TRUNC(n1,[n2]) , ROUND(n1,[n2]), FLOOR(n1,[n2]) , CIEL(n1,[n2])
+
+SQL> select trunc(12.2555,2) from dual;
+SQL> select round(12.5234) from dual;
+SQL> select floor(12.999999) from dual;
+SQL> select ceil(12.0000001) from dual;
+ 
+
+
+
+STRING FUNCTION
+1.	Length(str1)
+
+Returns the length of str1.
+SQL> select length('shabi') from dual;
+
+2.	Upper(str1)
+
+Returns the uppercase of str1.
+SQL> select length('shabi') from dual;
+
+3.	lower(str1)
+
+Returns the lowercase of str1.
+SQL> select lower('shabi') from dual;
+
+4.	Initcap(str1)
+
+Converts the initial charecters of a word to uppercase & remaining to lowercase.
+SQL> select Initcap('shabi') from dual;
+SQL> select Initcap('I am the best') from dual;
+
+5.	reverse(str1)
+
+return the reverse of str1.
+SQL> select reverse ('shabi') from dual;
+SQL> select reverse ('I am the best') from dual;
+
+6.	ascii(str1)
+
+return the ascii value for the str1.
+SQL> select ascii('s') from dual;
+SQL> select ascii('I am the best') from dual;
+
+7.	chr(n1)
+
+returns the charecter value for the n1.
+SQL> select chr(105) from dual;
+ 
+8.	lpad(str1,n1,[chr1])
+
+returns the left padded value for the n1.
+SQL> select lpad(‘oracle’, 10, ‘*’) from dual;
+SQL> select length (lpad(‘oracle’, 10, ‘*’)) from dual;
+
+9.	 rpad(str1,n1,[chr1])	
+
+returns the right  padded value for the n1.
+SQL> select rpad(‘oracle’, 10, ‘*’) from dual;
+SQL> select length (rpad(‘oracle’, 10, ‘*’)) from dual;
+
+10.	ltrim(str1, [chr1])	
+
+SQL> select ltrim('   oracle___') from dual;
+SQL> select ltrim ('*******shabi$$$$$', '*') from dual;
+
+11.	rtrim(str1, [chr1]) 
+
+    SQL> select rtrim ('shabi      ') from dual;
+    SQL> select rtrim ('shabi$$$$$$$$$$$', '$') from dual;
+	
+12.	trim([leading/trailing/both  chr1 from ]str1)
+                  SQL> select trim('       oracle      ') from dual;
+                  SQL> select trim ('        shabi ') from dual;
+
+13.	substr(str1, n1,[n2])
+
+SQL> select substr('oracle',2,3) from dual;
+       SQL> select substr('oracle',2) from dual;
+
+14.	instr(str1,str2,[n1],[n2])
+
+Returns the position of ‘n2th‘ occurrence of str2 in str1 starting from ‘n1th’
+Position(Default value of n1 is 1, n2 is 1)
+      
+       SQL> select instr('shabiisdatascientist' ,'h',2 ,1) from dual;
+
+15.	Soundex(str1)
+
+It is going to return the value which sounds like str1.
+	      SQL> select * from emp where SOUNDEX('ENAME') = SOUNDEX('SMYTHE');
+
+
+	
+DATE FUNCTION IN ORACLE
+
+1.	Month_between(date1,date2)
+Returns the number of month between date1 & date2.
+	SQL>month_between(’01-feb-18’,’01-mar-18’);     >>1
+	SQL>month_between(’01-mar-18’,’01-feb-18’);     >>1
+2.	last_day(date1)
+Returns the date of the last day in the given month between date1 & year of date1.
+	SQL> select last_day('01-feb-18') from dual;      
+	SQL> select last_day('01-may-18') from dual;     
+3.	next_day(date1,day)
+
+Returns the date of the next given day starting from date1.
+SQL> select  next_day('22-may-18', 'tue') from dual;
+SQL> select  next_day('22-may-18', 'sat') from dual;
+
+4.	add_months(date1,n1)
+
+Returns the date by adding n1 month to the date1.
+SQL>select add_months (’21-may-18’, 1) from dual;
+SQL>select add_months (’22-may-18’, 2) from dual;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MISCELLANEOUS / GENERAL / OTHERS FUNCTION 
+
+1.	NVL(exp1,exp2)
+
+NVL stands for null validation.
+
+NVL(exp1,exp2)
+
+If exp1 is null
+		return exp2
+      	 else 
+		return exp1
+
+select ename,comm, nvl(comm,0) as finalcomm from emp;
+select ename ,mgr ,nvl(mgr,0555) as newmgr from emp;
+
+
+2.	NVL2(exp1,exp2,exp3)
+
+If exp1 is null
+		return exp3
+       	else 
+		return exp2
+
+select empno,ename,nvl2(comm,comm,500) as newcomm from emp;
+select empno,ename,comm,sal+nvl2(comm,comm,111) as newcomm from emp;
+3.	NULLIF(exp1,exp2)
+
+If exp1 = exp2
+		return null
+      	 else 
+		return exp1
+
+select empno ,ename, nullif(sal,1250) as modi from emp;
+select empno,ename, mgr, nullif(mgr,7698) as newmgr from emp;
+
+4.	Case(exp1)
+It is the replacement of “if” and “elseif” statement . It is similar to switch case in procedural language.
+
+select empno,ename, job,
+case(job)
+when 'CLERK' then 'CCCCCCCCCCC'
+when 'MANAGER' then 'MMMMMMMMMM'
+when 'PRESIDENT' then 'PPPPPPPP'
+else 
+'SALESMAN' 
+end 
+from emp 
+
+5.	DECODE(exp1, exp2, exp3, exp4,……………….. expn)
+Same as case function
+
+select empno,ename,sal,
+decode(deptno,10,'ten',20,'twenty',30,'thirty')
+from emp;
+           	       select empno, ename, sal, decode(deptno,10,'ten',20,'twenty',30,'thirty') from emp;
+
+CONVERSION FUNCTION
+In oracle we have two types of conversion:
+1.	Implicit Conversion: Oracle is capable to convert the value from one datatype to the other datatype automatically in some special cases.
+
+Ex: When a string containing charecters  from ‘0’ to ‘9’ is used in a mathematical expression, then that string will be converted to into a number datatype.
+SQL> select 10+'20' from dual;         <20 is converted to number>
+        30  
+
+When a number is used  within a concatenation operator then the number will be converted into a string datatype.
+SQL> select 10||'20' from dual;
+1020 
+
+
+
+2.	Explicit Conversion: 	
+ 
+select to_number('1234') from dual;
+select 10+ to_number('12475') from dual;
+select '10' || '20' from dual;
+select '10' || to_char(20) from dual;
+note:  While converting a number into string we can change the format by representing each digit by a ‘9’.
+select empno,ename ,to_char(sal,'9,999') as qw  from emp;
+select empno,ename ,to_char(sal,'9,999.00') as qw  from emp;
+
+Day Format
+D:  day of the week (1-7)
+DD: day of the month (01-31)
+DDD: Day of the year (001-366)
+DY: 3 character day name (‘SUN’- ‘SAT’)
+DAY: Complete Day Name (‘SUNDAY’ –‘SATURDAY’)
+
+Month Format
+MM: month in 2 digit (01-12)
+MON: month in 3 character (‘JAN’ – ‘DEC’)
+MONTH: Complete Month Name (‘JANUARY’-‘DECEMBER’)
+
+Year Format
+Y	 – Year in 1 digit (0-9)
+YY	– Year in 2 digit (00-99)
+YYY	– Year in 3 digit (000-999)
+YYY	– Year in 4 digit (0001-9999)
+
+Time Format
+HH 		- hours in 12 hrs clock (00-12)
+HH24 		- hours in 24 hrs clock (00-23)
+MI 		- Minutes (00-59)
+SS 		- Second (00-59)
+(AM/PM) 	- AM &  PM
+
+Sp (spelled)      - zero, one, two……………..
+Th 	 	- 1st, 2nd, 3rd,………………….
+Spth/thsp 	- zeroeth, first, second
+These are the format which cannot be used individually. These should be prefixed with any format which returns in the format ‘0’ to ‘9’.
+Other Format
+Q - Quarter of the year (1-4)
+W – Week of the month (1-5)
+WW – Week of the year (01-53)
+AD/BC - year / era
+ CC – Country
+RM – Month in roman Charecters
+FM: It stands for formatting 
+Trims the blank spaces from the RHS of string(DAY,MONTH) format & 0’s 
+From the LHS of number format.
+select to_char(sysdate, 'DAY MONTH YY') from dual;
+select to_char(sysdate, 'FM DAY MONTH YY') from dual;
+select * from emp where to_char(hiredate, 'FMMONTH')= 'JANUARY' ;
+
+Distinct: Used to eliminate the duplicate values from a column.
