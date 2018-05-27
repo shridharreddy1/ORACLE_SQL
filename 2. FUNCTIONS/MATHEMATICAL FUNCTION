@@ -1,0 +1,58 @@
+MATHEMATICAL FUNCTION:
+1.	ABS(n1) 	
+
+Returns the magnitude of n1.
+SQL> select abs(40.264489) from dual; 	
+
+2.	SIGN(N1)
+
+Returns the sign of the value (1 for +ve , 0 for zero , -1 for -ve)
+SQL> select sign(40.264489) from dual;
+
+3.	SQRT(n1)
+
+Returns the square root of n1.
+SQL> select sqrt(16) from dual;
+
+4.	POWER(n1,N2)
+
+Returns  n1^N2.
+SQL> select power(2,5) from dual;
+
+5.	MOD(n1,n2)
+
+Returns  mod value.
+SQL> select mod(12,5) from dual;
+
+6.	LOG(n1,n2)
+
+Returns  log value.
+SQL> select log(2,2) from dual;
+
+7.	LN(n1)
+
+Returns  “log base e n1 “ value.
+SQL> select ln(n1) from dual;
+
+8.	EXP(n1)
+
+Returns  “ e ^n1 “ value.
+SQL> select exp(n1) from dual;
+
+9.	SIN(n1), COS(N1), TAN(N1)
+
+Returns  sin,cos,tan value of n1.
+SQL> select sin(n1) from dual;
+SQL> select cos(n1) from dual;
+SQL> select tan(n1) from dual;
+
+10.	TRUNC(n1,[n2]) , ROUND(n1,[n2]), FLOOR(n1,[n2]) , CIEL(n1,[n2])
+
+SQL> select trunc(12.2555,2) from dual;
+SQL> select round(12.5234) from dual;
+SQL> select floor(12.999999) from dual;
+SQL> select ceil(12.0000001) from dual;
+ 
+
+
+
