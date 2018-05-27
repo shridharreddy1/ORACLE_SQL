@@ -1,0 +1,69 @@
+CONVERSION FUNCTION
+In oracle we have two types of conversion:
+1.	Implicit Conversion: Oracle is capable to convert the value from one datatype to the other datatype automatically in some special cases.
+
+Ex: When a string containing charecters  from ‘0’ to ‘9’ is used in a mathematical expression, then that string will be converted to into a number datatype.
+SQL> select 10+'20' from dual;         <20 is converted to number>
+        30  
+
+When a number is used  within a concatenation operator then the number will be converted into a string datatype.
+SQL> select 10||'20' from dual;
+1020 
+
+
+
+2.	Explicit Conversion: 	
+ 
+select to_number('1234') from dual;
+select 10+ to_number('12475') from dual;
+select '10' || '20' from dual;
+select '10' || to_char(20) from dual;
+note:  While converting a number into string we can change the format by representing each digit by a ‘9’.
+select empno,ename ,to_char(sal,'9,999') as qw  from emp;
+select empno,ename ,to_char(sal,'9,999.00') as qw  from emp;
+
+Day Format
+D:  day of the week (1-7)
+DD: day of the month (01-31)
+DDD: Day of the year (001-366)
+DY: 3 character day name (‘SUN’- ‘SAT’)
+DAY: Complete Day Name (‘SUNDAY’ –‘SATURDAY’)
+
+Month Format
+MM: month in 2 digit (01-12)
+MON: month in 3 character (‘JAN’ – ‘DEC’)
+MONTH: Complete Month Name (‘JANUARY’-‘DECEMBER’)
+
+Year Format
+Y	 – Year in 1 digit (0-9)
+YY	– Year in 2 digit (00-99)
+YYY	– Year in 3 digit (000-999)
+YYY	– Year in 4 digit (0001-9999)
+
+Time Format
+HH 		- hours in 12 hrs clock (00-12)
+HH24 		- hours in 24 hrs clock (00-23)
+MI 		- Minutes (00-59)
+SS 		- Second (00-59)
+(AM/PM) 	- AM &  PM
+
+Sp (spelled)      - zero, one, two……………..
+Th 	 	- 1st, 2nd, 3rd,………………….
+Spth/thsp 	- zeroeth, first, second
+These are the format which cannot be used individually. These should be prefixed with any format which returns in the format ‘0’ to ‘9’.
+
+Other Format
+Q - Quarter of the year (1-4)
+W – Week of the month (1-5)
+WW – Week of the year (01-53)
+AD/BC - year / era
+ CC – Country
+RM – Month in roman Charecters
+FM: It stands for formatting 
+Trims the blank spaces from the RHS of string(DAY,MONTH) format & 0’s 
+From the LHS of number format.
+select to_char(sysdate, 'DAY MONTH YY') from dual;
+select to_char(sysdate, 'FM DAY MONTH YY') from dual;
+select * from emp where to_char(hiredate, 'FMMONTH')= 'JANUARY' ;
+
+Distinct: Used to eliminate the duplicate values from a column.
