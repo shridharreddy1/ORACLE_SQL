@@ -1,0 +1,57 @@
+MISCELLANEOUS / GENERAL / OTHERS FUNCTION 
+
+1.	NVL(exp1,exp2)
+
+NVL stands for null validation.
+
+NVL(exp1,exp2)
+
+If exp1 is null
+		return exp2
+      	 else 
+		return exp1
+
+select ename,comm, nvl(comm,0) as finalcomm from emp;
+select ename ,mgr ,nvl(mgr,0555) as newmgr from emp;
+
+
+2.	NVL2(exp1,exp2,exp3)
+
+If exp1 is null
+		return exp3
+       	else 
+		return exp2
+
+select empno,ename,nvl2(comm,comm,500) as newcomm from emp;
+select empno,ename,comm,sal+nvl2(comm,comm,111) as newcomm from emp;
+3.	NULLIF(exp1,exp2)
+
+If exp1 = exp2
+		return null
+      	 else 
+		return exp1
+
+select empno ,ename, nullif(sal,1250) as modi from emp;
+select empno,ename, mgr, nullif(mgr,7698) as newmgr from emp;
+
+4.	Case(exp1)
+It is the replacement of “if” and “elseif” statement . It is similar to switch case in procedural language.
+
+select empno,ename, job,
+case(job)
+when 'CLERK' then 'CCCCCCCCCCC'
+when 'MANAGER' then 'MMMMMMMMMM'
+when 'PRESIDENT' then 'PPPPPPPP'
+else 
+'SALESMAN' 
+end 
+from emp 
+
+5.	DECODE(exp1, exp2, exp3, exp4,……………….. expn)
+Same as case function
+
+select empno,ename,sal,
+decode(deptno,10,'ten',20,'twenty',30,'thirty')
+from emp;
+           	       select empno, ename, sal, decode(deptno,10,'ten',20,'twenty',30,'thirty') from emp;
+
