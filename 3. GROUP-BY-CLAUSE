@@ -1,0 +1,11 @@
+It is used to group the records based on a column or columns when a group is created automatically 
+eliminates the duplicates values from that columns.
+
+GROUP-BY / MULTI-ROW FUNCTIONS
+----------------------------------------------------------------------------------------------------
+
+1. SUM(N1) :Return the sum of the not null values in a group of values. 
+2. AVG(N1) :Return the avg of the not null values in a group of values.
+3. MIN(EXP1) :Return the min of the not null values in a group of values.
+4. MAX(EXP1) :Return the max of the not null values in a group of values.
+5. COUNT(EXP1/*) : Return the count of the not null values in a group of values / Return the number of rows in a group of rows .
