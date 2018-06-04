@@ -9,3 +9,17 @@ GROUP-BY / MULTI-ROW FUNCTIONS
 3. MIN(EXP1) :Return the min of the not null values in a group of values.
 4. MAX(EXP1) :Return the max of the not null values in a group of values.
 5. COUNT(EXP1/*) : Return the count of the not null values in a group of values / Return the number of rows in a group of rows .
+
+
+HAVING-BY CLAUSE / MULTI-ROW FUNCTIONS
+----------------------------------------------------------------------------------------------------
+It is used to compare the o/p of a multi-row function i.e It is used to filter the groups based on the user defined condition(s).
+
+Select ...............<table name>
+[where clause] [ group by clause ]
+having <condition> and/or <condition2>......................
+
+NOTE: If the 'where' & 'group by' clauses are based on same column then it is recommended to replace where clause by having 
+clause to improve the performance.
+
+
