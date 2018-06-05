@@ -22,4 +22,6 @@ having <condition> and/or <condition2>......................
 NOTE: If the 'where' & 'group by' clauses are based on same column then it is recommended to replace where clause by having 
 clause to improve the performance.
 
-
+select deptno,sum(sal) from emp
+group by deptno
+having sum(sal) >9000
