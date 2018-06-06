@@ -1,0 +1,36 @@
+Order by : It is used to sort the record either in the ascending/descending order on a column.
+
+Syntax: select  ..... from <tablename>
+        [where clause] [group by clause]
+        [having clause]
+        order by <column 1> asc/desc,<column2> asc/desc.......;
+
+NOTE : 800 > null  condition is false 
+       null > 800  condition is false 
+       800,null  (null is the highest)(in the order by  clause null is treated as the highest)
+       
+       select * from emp order by comm asc;
+       select * from emp order by hiredate desc;
+       
+ -------------------------------------------------------------------------------------------------------   
+
+Ordinal Number : The position of a column in the output is called its ordinal number 
+
+                 select empno,ename,sal from emp order by 3;
+NOTE: The where, group & having cluases are executed directly in the table data before selection where as the order by clause 
+      is executed on the data is a temporary location  after selection
+      
+      
+select to_char(hiredate ,'month'),count (*) from emp 
+where deptno in (10,20)
+group by to_char (hiredate,'month')
+having count(*) >=2
+order by 2;
+
+-----------------------------------------------------------------------------------------------------------
+
+Table Aliases Name : An alternative name to a table is called table alias name.
+
+select .... from emp
+<tablename> <aliasname> / "<alias name>";
+
