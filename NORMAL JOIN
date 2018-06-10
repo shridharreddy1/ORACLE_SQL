@@ -1,0 +1,45 @@
+NORMAL JOIN :
+
+1.SELF JOIN   : It is a process of joining the data of a table with the data of the same table.
+                Syn: select .......... from <table 1> join <table 2> on (joining cond) ;
+                     select * from  emp e join dept d on (e.deptno=d.deptno);
+                   
+2.OUTER JOIN : If the data is extracted from multiple tables such that the records which are not satisfying the condition are 
+               also displayed . It is called OUTER-JOIN.
+               
+               The join which displays only the record which are satisfying the condition are called as the inner join.
+               select ename,empno from emp e 
+               inner join dept d 
+               on (e.deptno = d.deptno);
+               
+               Outer join are of two types: 
+               
+               1. <table1> left outer join <table2> on <condition>
+                  <table1> is non-matching record.
+                  NOTE: It displays the non-matching record from the <TABLE1> 
+                  
+               2. <table1> right outer join <table2> on <condition>
+                  <table2> is non-matching record.
+                  NOTE: It displays the non-matching record from the <TABLE2>
+                  
+               3. <table1> full outer join <table2> on <condition>
+                  <table2>,<table2> is non-matching record.
+                  NOTE: It displays the non-matching record from the <TABLE1> & <TABLE2>
+ 
+ 3. CROSS JOIN : It is a process of extracting the data from multiple table without  a joining condition, These join are used to 
+                 to generate the available combination based on the data in a table.
+                 Syn: select ..........from <TABLE1> cross join <TABLE2>;
+                      select * from emp cross join dept;
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
