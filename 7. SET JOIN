@@ -1,0 +1,32 @@
+1. UNION : It displays the unique values which are available in either of output's in the ascdending order.
+         
+           select * from emp where deptno=10
+            union
+           select * from emp where deptno=20
+            union
+           select * from emp where deptno=30;
+
+2. INTERSECT : It displays the unique values which are available in both the output's in the ascdending order.
+         
+           select * from emp where deptno=10 or  deptno=20
+            union
+           select * from emp where deptno=20;
+           
+3. MINUS : It displays the unique values by eliminating the result of a select statement from  the result of another 
+           select statement in the ascending orders.
+           select * from  emp where deptno=10 or deptno=20
+           minus
+           select * from emp  where deptno=10;
+           
+4. UNION ALL : It displays the values by concatenating or combining the result of multiple select statement in the 
+               ascending order.
+ 
+               select * from  emp where deptno=10 or deptno=20
+               union all
+               select * from emp  where deptno=30;
+               
+
+
+
+
+
