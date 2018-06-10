@@ -1,1 +1,21 @@
 
+JOINS : It is a process of extracting the data from multiple tables.
+Basically two types of JOIN are there: NORMAL & SET 
+
+NORMAL JOIN: It is a process of extracting data from multiple tables by joining the data.
+Types of NORMAL JOIN:
+1. EQUI-JOIN
+2. NON-EQUI-JOIN
+3. SELF-JOIN
+4. OUTER JOIN
+5. CROSSED JOIN
+
+SET JOIN : It is a process of jonining the result of multiple select statement.
+Types of SET JOIN:
+1. UNION 
+2. INTERSECT 
+3. MINUS
+4. UNION ALL
+
+
+
