@@ -1,0 +1,20 @@
+ If the execution of a query is depending on the result of another query, it is called as sub-query.
+ 
+ The dependent query is the main query & the other query is called as sub-query.
+ 
+ Among the main query & sub query, the sub-query will be executed first.
+ 
+ If nested sub-queries exist, then the innermost sub-queries will be executed first.
+ 
+ Classification of sub-queries:
+ 
+ 1. Based on execution 
+    > Single column - Single row 
+    > Single column - Multi row 
+    > Multi column - Single row 
+    > Multi column - Multi row 
+    
+ 2. Based on Usage
+    > Normal Query
+    > Co-related Query
+    
