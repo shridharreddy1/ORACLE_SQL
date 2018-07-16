@@ -2,12 +2,13 @@ DATA RETRIEVAL LANGUAGE/DATA QUERY LANGUAGE
 
 It is used to retrieve the data from a relational database and displays the output in the user specified format.
 It is read only statement.
-SQL> Select <* / ColumnName(s) / Mathematical Expression (s)/ Literal(s) / Psuedocolumn(s) / Function(s) / Column Alias name(s) >   
+
+SQL> Select < * / ColumnName(s) / Mathematical Expression (s)/ Literal(s) / Psuedocolumn(s) / Function(s) / Column Alias name(s) >   
 from  <tablename>
 [Table Alias name] [Where clause] [Group by clause] [Having clause][order by clause]
 
 A select statement can take either a selection operator or a group of expression only.
-A select statement is exexcuted once for each record starting from top to bottom in a sequential order and in a forward direction.
+A select statement is executed once for each record starting from top to bottom in a sequential order and in a forward direction.
 
 Select statement is executed from LHS to RHS.
 
