@@ -3,7 +3,7 @@ DATA RETRIEVAL LANGUAGE/DATA QUERY LANGUAGE
 It is used to retrieve the data from a relational database and displays the output in the user specified format.
 It is read only statement.
 
-SQL> Select < * / ColumnName(s) / Mathematical Expression (s)/ Literal(s) / Psuedocolumn(s) / Function(s) / Column Alias name(s) >   
+SQL> Select < * / ColumnName(s) / Mathematical Expression(s) / Literal(s) / Psuedocolumn(s) / Function(s) / Column Alias name(s) >   
 from  <tablename>
 [Table Alias name] [Where clause] [Group by clause] [Having clause][order by clause]
 
@@ -28,7 +28,7 @@ SQL> select  20+20 from dummy;
 
 4.	Literals: Two types of literals as follows
 
-String Literals : Any string which is enclosed in single quotes . example ‘hello’
+String Literals : Any string which is enclosed in single quotes. for example ‘hello’
 Numeric literals : Any constant numeric value is called as a numeric constant. ex: 123
 
 SQL>select  ‘welcome to oracle’ from dual;
@@ -59,7 +59,7 @@ ROWID: Every record in the DB is uniquely identified by a system generated value
 SQL>select rowid , empno, ename from emp;
 SQL>select * from emp where rowid ='AAASNWAAEAAAAIzAAA';  
 
-ROWNUM: It is a pseudo column which generates a sequence of numeric  values which represents the position of the record in the output .ROWNUM are generated after selecting the data. 
+ROWNUM: It is a pseudo column which generates a sequence of numeric  values which represents the position of the record in the output. ROWNUM are generated after selecting the data. 
 SQL> select rownum ,empno,ename from emp; 
 SQL> select rownum,empno,ename from emp where deptno=10;
 SQL> select rownum,empno,ename,hiredate from emp where rownum=1;
