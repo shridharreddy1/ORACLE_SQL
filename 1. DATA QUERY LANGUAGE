@@ -70,6 +70,7 @@ NEXTVAL:
 CURRVAL:
 
 7.	Functions
+
 It is a pre-compiled program which takes the input by using the formal parametres.
 These formal parameter will take the input from actual parameter & return a single value by using the function name.
 	  Single row function : These function are executed once for each record of the table. 
@@ -122,7 +123,7 @@ SQL> select  ……  from <tablename>
 
 Wildcard Charecters:
 %       ---->    ‘Percentile’ is used to check any number of characters including no charecters.
-_       ---->     ‘Underscore’ checks for only single charecters. 
+_       ---->    ‘Underscore’ checks for only single charecters. 
 SQL> select * from emp where ename like 'A%' ;
 SQL> select * from emp where ENAME like 'S%';
 SQL> select * from emp where JOB like 'S%';
