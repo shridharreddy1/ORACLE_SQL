@@ -6,7 +6,7 @@ SQL
 
 3.	Data Definition Language(DDL) : create, drop, rename, alter, truncate
 
-4.	Transaction Control Language(TCL) :commit, rollback, save
+4.	Transaction Control Language(TCL) : commit, rollback, save
 
 5.	Data Control Language(DCL) : grant, revoke
 
@@ -23,6 +23,7 @@ PL/SQL
 
 
 CONNECTING WITH ORACLE DATABASE 
+
 1.	Go to commandprompt
 
 2.	sql> sqlplus
