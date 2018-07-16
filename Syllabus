@@ -1,18 +1,32 @@
 SQL 
+
 1.	Data Query language(DQL) / Data Retrieval Language(DRL) :  select
+
 2.	Data Manipulation Language(DML) : insert, update, delete, merge
+
 3.	Data Definition Language(DDL) : create, drop, rename, alter, truncate
+
 4.	Transaction Control Language(TCL) :commit, rollback, save
+
 5.	Data Control Language(DCL) : grant, revoke
 
+
 PL/SQL
+
 1.	Stored Procedure
+
 2.	User Defined Function
+
 3.	Packages
+
 4.	Triggers
+
 
 CONNECTING WITH ORACLE DATABASE 
 1.	Go to commandprompt
+
 2.	sql> sqlplus
+
 3.	enter username: scott (not case sensitive)
+
 4.	enter password: tiger (case sensitive)
