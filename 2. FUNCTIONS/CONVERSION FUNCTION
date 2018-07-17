@@ -1,8 +1,12 @@
 CONVERSION FUNCTION
-In oracle we have two types of conversion:
-1.	Implicit Conversion: Oracle is capable to convert the value from one datatype to the other datatype automatically in some special cases.
 
-Ex: When a string containing charecters  from ‘0’ to ‘9’ is used in a mathematical expression, then that string will be converted to into a number datatype.
+In oracle we have two types of conversion:
+1.	Implicit Conversion: Oracle is capable to convert the value from one datatype to the other datatype automatically
+        in some special cases.
+
+Ex: When a string containing charecters from ‘0’ to ‘9’ is used in a mathematical expression, 
+then that string will be converted to into a number datatype.
+   
 SQL> select 10+'20' from dual;         <20 is converted to number>
         30  
 
@@ -35,7 +39,7 @@ MON: month in 3 character (‘JAN’ – ‘DEC’)
 MONTH: Complete Month Name (‘JANUARY’-‘DECEMBER’)
 
 Year Format
-Y	 – Year in 1 digit (0-9)
+Y	– Year in 1 digit (0-9)
 YY	– Year in 2 digit (00-99)
 YYY	– Year in 3 digit (000-999)
 YYY	– Year in 4 digit (0001-9999)
@@ -45,7 +49,7 @@ HH 		- hours in 12 hrs clock (00-12)
 HH24 		- hours in 24 hrs clock (00-23)
 MI 		- Minutes (00-59)
 SS 		- Second (00-59)
-(AM/PM) 	- AM &  PM
+(AM/PM) 	- AM & PM
 
 Sp (spelled)      - zero, one, two……………..
 Th 	 	- 1st, 2nd, 3rd,………………….
@@ -53,13 +57,15 @@ Spth/thsp 	- zeroeth, first, second
 These are the format which cannot be used individually. These should be prefixed with any format which returns in the format ‘0’ to ‘9’.
 
 Other Format
-Q - Quarter of the year (1-4)
-W – Week of the month (1-5)
+
+Q  - Quarter of the year (1-4)
+W  – Week of the month (1-5)
 WW – Week of the year (01-53)
 AD/BC - year / era
- CC – Country
+CC – Ceuntry
 RM – Month in roman Charecters
 FM: It stands for formatting 
+
 Trims the blank spaces from the RHS of string(DAY,MONTH) format & 0’s 
 From the LHS of number format.
 select to_char(sysdate, 'DAY MONTH YY') from dual;
