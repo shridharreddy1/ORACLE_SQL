@@ -24,19 +24,19 @@ SQL> select power(2,5) from dual;
 Returns  mod value.
 SQL> select mod(12,5) from dual;
 
-6.	LOG(n1,n2)
+6.	LOG(n1,n2) <common logarithm>
 
 Returns  log value.
 SQL> select log(2,2) from dual;
 
-7.	LN(n1)
+7.	LN(n1) <natural logarithms>
 
 Returns  “log base e n1 “ value.
-SQL> select ln(n1) from dual;
+SQL> select LN(n1) from dual;
 
 8.	EXP(n1)
 
-Returns  “ e ^n1 “ value.
+Returns  “ e^n1 “ value.
 SQL> select exp(n1) from dual;
 
 9.	SIN(n1), COS(N1), TAN(N1)
