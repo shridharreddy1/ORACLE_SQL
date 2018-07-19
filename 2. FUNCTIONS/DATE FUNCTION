@@ -4,7 +4,8 @@ DATE FUNCTION IN ORACLE
 Returns the number of month between date1 & date2.
 	SQL>month_between(’01-feb-18’,’01-mar-18’);     >>1
 	SQL>month_between(’01-mar-18’,’01-feb-18’);     >>1
-	
+	SQL>select Months_Between('01-jan-2018','01-jan-2017') from dual;	
+
 2.	last_day(date1)
 Returns the date of the last day in the given month between date1 & year of date1.
 	SQL> select last_day('01-feb-18') from dual;      
