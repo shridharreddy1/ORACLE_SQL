@@ -10,7 +10,7 @@ Types of NORMAL JOIN:
 4. OUTER JOIN
 5. CROSSED JOIN
 
-SET JOIN : It is a process of jonining the result of multiple select statement.
+SET JOIN : It is a process of joining the result of multiple select statement.
 Types of SET JOIN:
 1. UNION 
 2. INTERSECT 
